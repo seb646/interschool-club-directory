@@ -1,0 +1,26 @@
+<div class="row mt-4">
+  <% @schools.each do |school| %>
+    <div class="col-12 col-md-4">
+      <div class="card mb-4 shadow-sm">
+        <div class="card-header">
+            <h5 style="text-align:center;margin:0"><%= school.name %></h5>
+        </div>
+        <div class="card-body">
+          <center>
+              <% if school.logo.blank? %>
+              <% else %>
+              <img src="<%= school.logo %>" class="align-self-center pt-0 pr-3 pl-3 pb-3" style="width:150px;max-height:150px;">
+              <% end %>
+              <br>
+              <p class="card-text"><%= school.description.truncate(150, separator: ' ') %></p>
+          </center>
+        </div>
+        <div class="card-footer">
+          <div class="row">
+            <div class="col"><%= link_to 'View Clubs', school_path(school.id), :class => 'btn btn-secondary btn-block' %></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

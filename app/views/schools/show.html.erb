@@ -1,0 +1,58 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><%= link_to "Schools", schools_path %></li>
+    <li class="breadcrumb-item active" aria-current="page"><%= @school.name %></li>
+  </ol>
+</nav>
+<% if @school.user == current_user %>
+  <%= link_to "Edit School", edit_school_path(@school), :class => 'btn btn-secondary btn-sm' %>
+  <%= link_to "Delete School", school_path(@school), method: :delete, data: {confirm: "Are you sure?"}, :class => 'btn btn-danger btn-sm' %><br><br>
+<% end %>
+<div class="card shadow-sm mb-4">
+  <div class="card-body">
+    <div class="media">
+      <% if @school.logo.blank? %>
+      <% else %>
+        <img src="<%= @school.logo %>" class="align-self-center mr-3 p-2" width="150px">
+      <% end %>
+      <div class="media-body">
+        <h2 class="mb-2"><%= @school.name %></h2>
+        <p><%= @school.description %></p>
+        <div class="row">
+          <div class="col-4">
+            <b>Website:</b><br>
+            <a href="<%= @school.website %>"><%= @school.website.gsub("www.","") %></a>
+          </div>
+          <div class="col-3">
+            <b>Phone Number:</b><br>
+            <a href="tel:<%= @school.phone %>"><%= @school.phone %></a>
+          </div>
+          <div class="col-5">
+            <b>Address:</b><br>
+            <a href="https://www.google.com/maps/search/?q=<%= @school.address.gsub(" ","+") %>"><%= @school.address %></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Club</th>
+      <th scope="col">Description</th>
+      <th scope="col" width="10%">Time</th>
+      <th scope="col" width="15%">Location</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @school.clubs.each do |club| %>
+    <tr>
+      <th scope="row"><%= link_to club.name, club_path(club.id) %></th>
+      <td><%= club.description.truncate(150, separator: ' ') %></td>
+      <td><%= club.days %> @ <%= club.time %></td>
+      <td><%= club.location %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

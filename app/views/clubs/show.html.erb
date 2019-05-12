@@ -1,0 +1,42 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><%= link_to "Schools", home_path %></li>
+    <li class="breadcrumb-item"><%= link_to @club.school.name, school_path(@club.school_id) %></li>
+    <li class="breadcrumb-item active" aria-current="page"><%= @club.name %></li>
+  </ol>
+</nav>
+<div class="row">
+    <div class="col-8">
+        <h2 class="mb-3"><%= @club.name %></h2>
+        <p class="text-secondary" style="font-size: 18px;font-weight: 300;"><%= @club.description %></p><br>
+        <% if @club.user == current_user %>
+        <hr class="mt-4">
+        <%= link_to "Edit Club", edit_club_path(@club.id), :class => 'btn btn-secondary btn-sm' %>
+        <%= link_to "Delete Club", clubs_path(@club.id), method: :delete, data: {confirm: "Are you sure?"}, :class => 'btn btn-danger btn-sm' %>
+        <% end %>
+    </div>
+    <div class="col-4">
+        <div class="card club-info shadow-sm">
+          <% if @club.image.blank? %>
+          <% else %>
+            <a href="<%= @club.image %>"><img src="<%= @club.image %>" class="card-img-top"></a>
+          <% end %>
+          <div class="card-header" style="background: #343a40;">
+            <h5 class="card-title mb-0 text-center text-white"><%= @club.name %></h5>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item"><b>Meeting Time:</b><br> <%= @club.days %> @ <%= @club.time %></li>
+            <li class="list-group-item"><b>Meeting Location:</b><br> <%= @club.location %></li>
+            <li class="list-group-item"><b>Student Leader:</b><br> <a href="mailto:<%= @club.user.email %>"><%= @club.user.first_name %> <%= @club.user.last_name %> <% @club.user.graduating %></a></li>
+            <li class="list-group-item"><b>Faculty Advisor:</b><br> <a href="mailto:<%= @club.faculty_email %>"><%= @club.faculty %></a></li>
+            <li class="list-group-item"><b>School:</b><br><img src="<%= @club.school.logo %>" class="mb-2 mt-2" width="60px"/>&nbsp;&nbsp;<%= link_to @club.school.name, school_path(@club.school) %></li>
+          </ul>
+          <% if @club.contact.blank? %>
+          <% else %>
+          <div class="card-body">
+            <a href="mailto:<%= @club.contact %>" class="btn btn-success btn-block">Contact Us</a>
+          </div>
+          <% end %>
+        </div>
+    </div>
+</div>

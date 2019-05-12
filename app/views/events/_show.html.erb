@@ -1,0 +1,9 @@
+<h4>Events</h4>
+<% if @club.events_id.blank? %>
+<p class="text-danger font-italic">No events found</p>
+<% else %>
+    
+<% end %>
+<% if @club.user == current_user %>
+<%= link_to "Create Event", new_school_club_event_path(@club.id), :class => 'btn btn-success btn-sm' %>
+<% end %>

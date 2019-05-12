@@ -1,0 +1,79 @@
+<h1>Edit Club</h1>
+<%= form_for :club, url: club_path(@club.id), method: :patch do |f| %>
+    <%if @club.errors.any? %>
+        <% @club.errors.full_messages.each do |message| %>
+            <div class="alert alert-danger"><%= message %></div>
+        <% end %>
+    <% end %>
+    <div class="form-group">
+        <%= f.label :name %><br>
+        <%= f.text_field(:name, {:class => 'form-control'}) %>
+    </div>
+    <div class="form-group">
+        <%= f.label :description %><br>
+        <%= f.text_area(:description, {:class => 'form-control', :rows => '5'}) %>
+    </div>
+    <div class="row">
+        <div class="col">
+          <div class="form-group">
+            <%= f.label :days %><br>
+            <%= f.text_field(:days, {:class => 'form-control'}) %>
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-group">
+            <%= f.label :time %><br>
+            <%= f.text_field(:time, {:class => 'form-control'}) %>
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-group">
+            <%= f.label :location %><br>
+            <%= f.text_field(:location, {:class => 'form-control'}) %>
+          </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
+                <%= f.label :school_id %><br>
+                <%= f.collection_select(:school_id, School.all, :id, :name, {:prompt => true}, {:class => 'form-control'}) %>
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <%= f.label :faculty %> advisor<br>
+                <%= f.text_field(:faculty, {:class => 'form-control'}) %>
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <%= f.label :faculty_email %><br>
+                <%= f.text_field(:faculty_email, {:class => 'form-control'}) %>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
+                <label for="user_id">Student Leader</label><br>
+                <%= f.collection_select(:user_id, User.all, :id, :name, {:prompt => true}, {:class => 'form-control'}) %>
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <%= f.label :contact %><br>
+                <%= f.text_field(:contact, {:class => 'form-control'}) %>
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <%= f.label :image %><br>
+                <%= f.text_field(:image, {:class => 'form-control'}) %>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <%= f.submit({:class => 'btn btn-primary'}) %>
+    </div>
+<% end %>
