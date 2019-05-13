@@ -52,6 +52,8 @@ test:
 #
 production:
   <<: *default
-  database: blog_production
-  username: blog
-  password: <%= ENV['BLOG_DATABASE_PASSWORD'] %>
+  host: s554ongw9quh1xjs.cbetxkdyhwsb.us-east-1.rds.amazonaws.com
+  database: yo7vfc14y1xpi77h
+  username: i62b1hd34cxlau2j
+  password: unxni5a86ivzlwfl
+  port: 3306
