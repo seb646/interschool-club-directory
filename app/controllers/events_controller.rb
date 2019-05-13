@@ -3,13 +3,12 @@ class EventsController < ApplicationController
    before_action :authenticate_user!, except: [:index, :show]
     
     def index
-       @club = Club.all
-       @events = @club.events.all
+       @events = Events.order('name ASC')
     end
     
     def show 
-        @club = Club.find(params[:club])
-        @event = @club.events.all
+       @club = Club.find(params[:club_id])
+       @event = @club.events.find(params[:id])
     end
     
     def new 
@@ -17,22 +16,38 @@ class EventsController < ApplicationController
         #@club = Club.new
     end
     
-    def create 
-        @club = Club.find(params[:club])
-        @event = @club.events.create(event_params.merge(user: current_user.id))
-        
-        redirect_to post_path(@club)
+    def edit
+        @club = Club.find(params[:club_id])
+        @event = @club.events.find(params[:id])
     end
     
+    def create 
+        @club = Club.find(params[:club_id])
+        @event = @club.events.create(event_params)
+        
+        redirect_to club_path(@club)
+    end
+    
+    def update
+        @club = Club.find(params[:club_id])
+        @event = @club.events.find(params[:id])
+        
+        if(@club.events.update(event_params))
+            redirect_to @club
+        else
+            render 'edit'
+        end
+    end 
+    
     def destroy 
-        @club = Club.find(params[:club])
+        @club = Club.find(params[:club_id])
         @event = @club.events.find(params[:id])
         @event.destroy
         
-        redirect_to posts_path(@event)
+        redirect_to club_path(@club)
     end
     
     private def event_params
-        params.require(:event).permit(:user, :name, :date, :location, :description, :rsvp)
+        params.require(:event).permit(:user_id, :name, :date_and_time, :location, :description, :rsvp)
     end
 end

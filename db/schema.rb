@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_09_190256) do
+ActiveRecord::Schema.define(version: 2019_05_13_053817) do
+
+  create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.text "name"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "clubs", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.string "name"
@@ -28,6 +35,8 @@ ActiveRecord::Schema.define(version: 2019_05_09_190256) do
     t.string "faculty_email"
     t.bigint "events_id"
     t.integer "school_id"
+    t.text "grades"
+    t.text "website"
     t.index ["events_id"], name: "index_clubs_on_events_id"
   end
 
@@ -36,9 +45,9 @@ ActiveRecord::Schema.define(version: 2019_05_09_190256) do
     t.bigint "user_id"
     t.string "name"
     t.text "description"
-    t.date "event_date"
-    t.string "location"
-    t.string "rsvp"
+    t.text "date_and_time"
+    t.text "location"
+    t.text "rsvp"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["club_id"], name: "index_events_on_club_id"
@@ -75,6 +84,7 @@ ActiveRecord::Schema.define(version: 2019_05_09_190256) do
     t.text "last_name"
     t.integer "graduating"
     t.text "bio"
+    t.boolean "admin", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

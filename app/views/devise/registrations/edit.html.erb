@@ -31,6 +31,10 @@
     <%= f.label :bio %><br />
     <%= f.text_area(:bio, {:class => 'form-control', :rows => '5'}) %>
   </div>
+  
+  <div class="form-group">
+    <%= f.label :admin %> User <%= f.check_box :admin %>
+  </div>
 
   <div class="form-group">
     <%= f.label :password %><br />

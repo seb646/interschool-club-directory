@@ -2,6 +2,10 @@ body{
     font-family: 'Open Sans', serif !important;
 }    
 
+body a, body a:hover{
+    color: #016688;
+}
+
 .alert-error {
     background-color: #f2dede;
     border-color: #eed3d7;
@@ -31,16 +35,16 @@ body{
  }
 
 .header-img{
-    background: url('https://static1.squarespace.com/static/52fe3eade4b053964a5a8341/t/5ccb091e4785d3e1b672d3cf/1556810019471/209-Browning-RC-IMG_9142.JPG?format=1500w');
+    // background: url('https://static1.squarespace.com/static/52fe3eade4b053964a5a8341/t/5ccb091e4785d3e1b672d3cf/1556810019471/209-Browning-RC-IMG_9142.JPG?format=1500w');
+    background: url("https://static1.squarespace.com/static/56642c7fe4b08333d1fb2d8a/t/566638d8d8af105622d09a10/1449539800229/fvbackground3.jpg");
     background-size: 100%;
-    height: 350px;
-    background-position: 0px -100px;
-    background-attachment: fixed;
+    height: 210px;
+    background-position: 0px 0px;
     padding: 0px !important;
 }
 
 .header-overlay {
-    background: #0000004f;
+    background: #026688ba;
     height: 100%;
 }
 
@@ -87,8 +91,12 @@ body{
 
 .club-info{
     border-radius: 6px;
-    width: 18rem;
+    width: 21rem;
     border: 0px !important;
+}
+
+.card{
+    border-radius: 6px !important;
 }
 
 .club-info img{
@@ -112,6 +120,11 @@ thead tr td, thead tr th {
     border-top: 0px !important;
 }
 
+.table td, .table th {
+    display: table-cell;
+    vertical-align: middle !important;
+}
+
 .breadcrumb{
     padding: 0px !important;
     background: transparent !important;
@@ -126,6 +139,10 @@ thead tr td, thead tr th {
     border-top: 0px !important;
 }
 
+.delete{
+    float: right;
+}
+
 .card-header {
     padding: 1.3rem 1.2rem !important;
 }
@@ -137,4 +154,8 @@ thead tr td, thead tr th {
 .card-header:first-child {
     border-top-right-radius: 6px !important;
     border-top-left-radius: 6px !important;
+}
+
+.raleway{
+    font-family: 'Raleway', 'Open Sans', sans-serif;
 }

@@ -4,8 +4,10 @@ Rails.application.routes.draw do
   
   resources :schools
   
+  resources :categories
+  
   resources :clubs do
-      resources :events
+    resources :events
   end
   
   devise_for :users do

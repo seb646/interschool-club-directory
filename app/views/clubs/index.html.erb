@@ -1,22 +1,19 @@
-<h2>All Clubs</h2>
-<table class="table table-hover">
+<table class="table">
   <thead>
     <tr>
-      <th scope="col" width="15%">Club</th>
+      <th scope="col" width="20%">Club</th>
       <th scope="col">Description</th>
-      <th scope="col" width="10%">Time</th>
-      <th scope="col" width="15%">Location</th>
-      <th scope="col" width="15%">School</th>
+      <th scope="col" width="20%">Time</th>
+      <th scope="col" width="30%">School</th>
     </tr>
   </thead>
   <tbody>
     <% @clubs.each do |club| %>
-    <tr>
+    <tr style="font-size: 15px;">
       <th scope="row"><%= link_to club.name, club_path(club.id) %></th>
       <td><%= club.description.truncate(150, separator: ' ') %></td>
-      <td><%= club.days %> @ <%= club.time %></td>
-      <td><%= club.location %></td>
-      <td><%= link_to club.school.name, school_path(club.school_id)%></td>
+      <td><%= club.days %> <%= club.time.gsub(" - ", "-") %></td>
+      <td><a href="<%= school_path(club.school_id) %>"><img src="<%= club.school.logo %>" class="mb-2 mt-2" width="50px"/></a>&nbsp;&nbsp;<%= link_to club.school.name, school_path(club.school_id) %></a></td>
     </tr>
     <% end %>
   </tbody>

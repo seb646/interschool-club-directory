@@ -5,7 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :schools
   has_many :clubs
-  has_many :events
   
   def name
     first_name + " " + last_name 

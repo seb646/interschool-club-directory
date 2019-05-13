@@ -1,0 +1,39 @@
+ <footer class="pt-4 pb-4 pt-md-5 border-top" style="background: #f5f5f5;">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-md-5 mr-5">
+        <%= link_to "Clubs @ New York Interschool", home_path, :class => 'navbar-brand text-body' %>
+        <small class="d-block mb-4 text-muted">Created by <a class="text-dark" href="https://github.com/seb646">Sebastian Rodriguez</a></small>
+        <hr>
+        <a href="http://www.interschool.org/"><img src="https://i.postimg.cc/YCm4H8v9/interschool.png" style="width:200px" class="mb-3 mt-4 mr-5"/></a><br>
+        <small class="d-block text-muted mb-3 pr-5">New York Interschool is a consortium of eight Manhattan independent schools known for their high academic standards, outstanding teaching, and traditions of quality.</small>
+      </div>
+      <div class="col-6 col-md mr-4 mb-3" style="border-right: 1px solid #dcdcdc;padding-left: 2.5rem;border-left: 1px solid #dcdcdc;">
+        <h5 class="garamond">Club Listings</h5>
+        <ul class="list-unstyled text-small">
+          <% $schools.each do |school| %>
+          <li><%= link_to school.name, school_path(school.id), :class => 'text-black-50 garamond' %></li>
+          <% end %>
+        </ul>
+      </div>
+      <div class="col-6 col-md">
+        <h5 class="garamond">Site Navigation</h5>
+        <ul class="list-unstyled text-small">
+          <li><%= link_to "All Schools", schools_path, :class => 'text-black-50 garamond'  %></li>
+          <li><%= link_to "All Clubs", clubs_path, :class => 'text-black-50 garamond'  %></li>
+          <% if user_signed_in? %>
+              <li><%= link_to "Create School", new_school_path, :class => 'text-black-50 garamond'  %></li>
+              <li><%= link_to "Create Club", new_club_path(), :class => 'text-black-50 garamond'  %></li>
+              <li><%= link_to "Edit User", edit_user_registration_path, :class => 'text-black-50 garamond'  %></li>
+              <li><%= link_to "Log Out", destroy_user_session_path, :class => 'text-black-50 garamond'  %></li>
+            <% else %>
+              <li><%= link_to "Sign Up", new_user_registration_path, :class => 'text-black-50 garamond'  %></li>
+              <li><%= link_to "Login", new_user_session_path, :class => 'text-black-50 garamond'  %></li>
+            <% end %>
+        </ul>
+      </div>
+    </div>
+    <hr>
+    <center><small class="d-block text-muted mb-3 mt-4">Copyright © 2019. This website is owned and operated independently and has no association with The New York Interschool. </small></center>
+  </div>
+</footer>

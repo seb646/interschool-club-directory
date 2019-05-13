@@ -1,0 +1,43 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><%= link_to "Schools", home_path %></li>
+    <li class="breadcrumb-item"><%= link_to @club.school.name, school_path(@club.school_id) %></li>
+    <li class="breadcrumb-item"><%= link_to @club.name, club_path(@club.id) %></li>
+    <li class="breadcrumb-item"><%= link_to @event.name, club_event_path(@club, @event) %></li>
+    <li class="breadcrumb-item active" aria-current="page">Edit Event</li>
+  </ol>
+</nav>
+<h3>Edit Event - <%= @event.name %></h3>
+<%= form_for :event, url: club_event_path(@club, @event), method: :patch do |f| %>
+            <div class="form-group">
+                <%= f.label :name %><br>
+                <%= f.text_field(:name, {:class => 'form-control'}) %>
+            </div>
+            <div class="form-group">
+                <%= f.label :description %><br>
+                <%= f.text_area(:description, {:class => 'form-control'}) %>
+            </div>
+            <div class="form-group">
+                <%= f.label :date_and_time %><br>
+                <%= f.text_field(:date_and_time, {:class => 'form-control'}) %>
+            </div>
+            <div class="form-group">
+                <%= f.label :location %><br>
+                <%= f.text_field(:location, {:class => 'form-control'}) %>
+            </div>
+            <div class="form-group">
+                <label for="event_rsvp">Link to RSVP</label><br>
+                <%= f.text_field(:rsvp, {:class => 'form-control'}) %>
+            </div>
+            <div class="form-group">
+                <%= f.submit({:class => 'btn btn-success'}) %>
+            </div>
+        <% end %>
+<hr class="mt-3 mb-3">
+
+<div class="alert alert-danger pt-4" role="alert">
+  <div class="row">
+  <div class="col-10"><p><b>Warning: If you delete the event, you will not be able to retreive any information regarding this event. This action cannot be undone!</b></p></div>
+  <div class="col-2"><%= link_to "Delete Event", club_event_path(@club, @event), method: :delete, data: {confirm: "Are you sure?"}, :class => 'btn btn-danger delete mt-2' %></div>
+  </div>
+</div>

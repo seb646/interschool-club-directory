@@ -1,4 +1,11 @@
-<h1>Edit School</h1>
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><%= link_to "Schools", home_path %></li>
+    <li class="breadcrumb-item"><%= link_to @school.name, school_path(@school) %></li>
+    <li class="breadcrumb-item active" aria-current="page">Edit School</li>
+  </ol>
+</nav>
+<h1>Edit School – <%= @school.name %></h1>
 <%= form_for :school, url: school_path(@school), method: :patch do |f| %>
     <%if @school.errors.any? %>
         <% @school.errors.full_messages.each do |message| %>
@@ -45,3 +52,49 @@
         <%= f.submit({:class => 'btn btn-primary'}) %>
     </div>
 <% end %>
+<hr class="mt-4 mb-4">
+<div class="card" id="club-management">
+    <div class="card-header" style="padding:.75rem 1.25rem !important">
+        <h5 class="mt-2 font-weight-bold">Club Management</h5>
+    </div>
+    <div class="card-body">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col" width="20%">Club</th>
+              <th scope="col" width="15%">Faculty Advisor</th>
+              <th scope="col" width="20%">Student Leader</th>
+              <th scope="col" width="15%">Location</th>
+              <th scope="col" width="20%">Time</th>
+              <th scope="col" width="10%">Manage</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% if @school.clubs.blank? %>
+                 <tr style="font-size: 15px;">
+                  <th scope="row"><p class="text-danger font-italic">No clubs found</p></th>
+                </tr>
+            <% else %>
+                <% @school.clubs.each do |club| %>
+                <tr style="font-size: 15px;">
+                  <th scope="row"><%= link_to club.name, club_path(club) %></th>
+                  <td><% if club.faculty.blank? %><% else %><% if club.faculty_email.blank? %><%= club.faculty %><% else %><a href="mailto:<%= club.faculty_email %>"><%= club.faculty %></a><% end %><% end %></td>
+                  <td><% if club.user.name == "Not Listed" %><% else %><a href="mailto:<%= club.user.email %>"><%= club.user.name %></a><% end %></td>
+                  <td><%= club.location %></td>
+                  <td><%= club.days %> <%= club.time.gsub(" - ", "-") %></td>
+                  <td><%= link_to "Edit", edit_club_path(club), :class => 'btn btn-secondary btn-sm btn-block' %> <%= link_to "Delete", club_path(club), method: :delete, data: {confirm: "Are you sure you want to delete this event?"}, :class => 'btn btn-sm btn-block btn-danger' %></td>
+                </tr>
+                <% end %>
+            <% end %> 
+          </tbody>
+        </table>
+   </div>
+</div>
+<br>
+
+<div class="alert alert-danger pt-4" role="alert">
+  <div class="row">
+  <div class="col-10"><p><b>Warning: If you delete this school, you will delete all clubs and events associated with the school. This action cannot be undone! </b></p></div>
+  <div class="col-2"><%= link_to "Delete School", school_path(@school), method: :delete, data: {confirm: "Are you sure?"}, :class => 'btn btn-danger delete mt-2' %></div>
+  </div>
+</div>

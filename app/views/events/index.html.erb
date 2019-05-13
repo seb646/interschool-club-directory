@@ -1,0 +1,30 @@
+<h3 id="events">All Events</h3>
+        <table class="table mb-5">
+          <thead>
+            <tr>
+              <th scope="col" width="20%">Event</th>
+              <th scope="col" width="30%">Description</th>
+              <th scope="col" width="15%">When</th>
+              <th scope="col" width="15%">Club</th>
+              <th scope="col" width="10%">School</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% if @events.blank? %>
+                 <tr style="font-size: 15px;">
+                  <th scope="row"><p class="text-danger font-italic">No events found</p></th>
+                </tr>
+            <% else %>
+                <% @events.each do |event| %>
+                <tr style="font-size: 15px;">
+                  <th scope="row"><%= link_to event.name, club_event_path(event) %></th>
+                  <td><%= event.description %></td>
+                  <td><%= event.date_and_time %></td>
+                  <td><%= event.club.name %></td>
+                  <td><%= event.club.school.name %></td>
+                  <td><%= link_to "Edit", club_event_path(event), :class => 'btn btn-success btn-sm btn-block' %> <%= link_to "Delete", club_event_path(event), method: :delete, data: {confirm: "Are you sure you want to delete this event?"}, :class => 'btn btn-sm btn-block btn-danger' %></td>
+                </tr>
+                <% end %>
+            <% end %> 
+          </tbody>
+        </table>

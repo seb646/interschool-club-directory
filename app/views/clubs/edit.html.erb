@@ -1,4 +1,12 @@
-<h1>Edit Club</h1>
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><%= link_to "Schools", home_path %></li>
+    <li class="breadcrumb-item"><%= link_to @club.school.name, school_path(@club.school_id) %></li>
+    <li class="breadcrumb-item"><%= link_to @club.name, club_path(@club.id) %></li>
+    <li class="breadcrumb-item active" aria-current="page">Edit Club</li>
+  </ol>
+</nav>
+<h1>Edit Club – <%= @club.name %></h1>
 <%= form_for :club, url: club_path(@club.id), method: :patch do |f| %>
     <%if @club.errors.any? %>
         <% @club.errors.full_messages.each do |message| %>
@@ -77,3 +85,80 @@
         <%= f.submit({:class => 'btn btn-primary'}) %>
     </div>
 <% end %>
+
+<hr class="mt-4 mb-4">
+<div class="card" id="events">
+    <div class="card-header" style="padding:.75rem 1.25rem !important">
+        <h5 class="mt-2 font-weight-bold">Event List</h5>
+    </div>
+    <div class="card-body">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col" width="20%">Event</th>
+              <th scope="col" width="30%">Description</th>
+              <th scope="col" width="15%">When</th>
+              <th scope="col" width="15%">Where</th>
+              <th scope="col" width="10%">Manage</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% if @club.events.blank? %>
+                 <tr style="font-size: 15px;">
+                  <th scope="row"><p class="text-danger font-italic">No events found</p></th>
+                </tr>
+            <% else %>
+                <% @club.events.each do |event| %>
+                <tr style="font-size: 15px;">
+                  <th scope="row"><%= link_to event.name, club_event_path(event) %></th>
+                  <td><%= event.description %></td>
+                  <td><%= event.date_and_time %></td>
+                  <td><%= event.location %></td>
+                  <td><%= link_to "Edit", edit_club_event_path(@club, event), :class => 'btn btn-secondary btn-sm btn-block' %> <%= link_to "Delete", club_event_path(@club, event), method: :delete, data: {confirm: "Are you sure you want to delete this event?"}, :class => 'btn btn-sm btn-block btn-danger' %></td>
+                </tr>
+                <% end %>
+            <% end %> 
+          </tbody>
+        </table>
+    </div>
+</div>
+<br>
+<div class="card" id="club-management">
+    <div class="card-header" style="padding:.75rem 1.25rem !important">
+        <h5 class="mt-2 font-weight-bold">Create Event</h5>
+    </div>
+    <div class="card-body">
+        <%= form_for([@club, @club.events.new]) do |f| %>
+            <div class="form-group">
+                <%= f.label :name %><br>
+                <%= f.text_field(:name, {:class => 'form-control'}) %>
+            </div>
+            <div class="form-group">
+                <%= f.label :description %><br>
+                <%= f.text_area(:description, {:class => 'form-control'}) %>
+            </div>
+            <div class="form-group">
+                <%= f.label :date_and_time %><br>
+                <%= f.text_field(:date_and_time, {:class => 'form-control'}) %>
+            </div>
+            <div class="form-group">
+                <%= f.label :location %><br>
+                <%= f.text_field(:location, {:class => 'form-control'}) %>
+            </div>
+            <div class="form-group">
+                <label for="event_rsvp">Link to RSVP</label><br>
+                <%= f.text_field(:rsvp, {:class => 'form-control'}) %>
+            </div>
+            <div class="form-group">
+                <%= f.submit({:class => 'btn btn-success'}) %>
+            </div>
+        <% end %>
+    </div>
+</div>
+<br>
+<div class="alert alert-danger pt-4" role="alert">
+  <div class="row">
+  <div class="col-10"><p><b>Warning: If you delete the club, you will not be able to retreive any events or information associated with the club. This action cannot be undone!</b></p></div>
+  <div class="col-2"><%= link_to "Delete Club", club_path(@club), method: :delete, data: {confirm: "Are you sure?"}, :class => 'btn btn-danger delete mt-2' %></div>
+  </div>
+</div>

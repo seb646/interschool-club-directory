@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Clubs Directory</title>
+    <title>Interschool Club Directory</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -18,9 +18,11 @@
 
   <body>
     <%= render 'layouts/nav' %>
+    <%= render 'layouts/header' %>
     <div class="container mt-4 mb-5">
       <%= render 'layouts/messages' %>
       <%= yield %>
     </div>
+    <%= render 'layouts/footer' %>
   </body>
 </html>

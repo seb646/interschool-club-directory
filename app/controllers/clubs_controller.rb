@@ -12,6 +12,7 @@ class ClubsController < ApplicationController
     
     def new 
         @club = current_user.clubs.new
+        @categories = Category.all.map{|c| [ c.name, c.id ] }
         #@club = Club.new
     end
     
@@ -51,6 +52,6 @@ class ClubsController < ApplicationController
     end
     
     private def club_params
-        params.require(:club).permit(:name, :description, :user_id, :days, :time, :location, :contact, :image, :faculty, :faculty_email, :school_id)
+        params.require(:club).permit(:name, :description, :user_id, :days, :time, :location, :contact, :image, :faculty, :faculty_email, :school_id, :category, :years, :website)
     end
 end

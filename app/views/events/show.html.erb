@@ -2,14 +2,19 @@
   <ol class="breadcrumb">
     <li class="breadcrumb-item"><%= link_to "Schools", home_path %></li>
     <li class="breadcrumb-item"><%= link_to @club.school.name, school_path(@club.school_id) %></li>
-    <li class="breadcrumb-item active" aria-current="page"><%= @club.name %></li>
+    <li class="breadcrumb-item"><%= link_to @club.name, club_path(@club.id) %></li>
+    <li class="breadcrumb-item active" aria-current="page"><%= @event.name %></li>
   </ol>
 </nav>
 <div class="row">
     <div class="col-8">
-        <h2 class="mb-3"><%= @club.name %></h2>
-        <p class="text-secondary" style="font-size: 18px;font-weight: 300;"><%= @club.description %></p><br>
-        <%= render 'events/show' %>
+        <h2 class="mb-3"><%= @event.name %></h2>
+        <p class="text-secondary" style="font-size: 18px;font-weight: 300;"><%= @event.description %></p><br>
+        <ul class="list-group list-group-flush pr-5">
+          <li class="list-group-item"><% if @event.date_and_time.blank? %><% else %><b>When:</b> <%= @event.date_and_time %><% end %></li>
+          <li class="list-group-item"><% if @event.location.blank? %><% else %><b>Where:</b> <%= @event.location %><% end %></li>
+          <li class="list-group-item"><% if @event.rsvp.blank? %><% else %><b>RSVP:</b> <a href="<%= @event.rsvp %>">Link</a><% end %></li>
+        </ul>
     </div>
     <div class="col-4">
         <div class="card club-info shadow-sm">
@@ -31,11 +36,14 @@
             <% if @club.contact.blank? %>
             <% else %>
               <a href="mailto:<%= @club.contact %>" class="btn btn-success btn-block">Contact Us</a>
+            
             <% end %>
             <% if @club.user == current_user %>
-              <%= link_to "Manage Club", edit_club_path(@club.id), :class => 'btn btn-secondary btn-block' %>
+            <%= link_to "Manage Club", edit_club_path(@club.id), :class => 'btn btn-secondary btn-block' %>
+            <%= link_to "Edit Event", edit_club_event_path(@club, @event), :class => 'btn btn-warning btn-block' %>
             <% end %>
         </div>
       </div>
     </div>
   </div>
+</div>

@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+<nav class="navbar navbar-expand-md navbar-dark" style="background: #026688">
       <div class="container">
         <%= link_to "Clubs @ New York Interschool", home_path, :class => 'navbar-brand' %>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
@@ -12,8 +12,7 @@
           </ul>
           <ul class="navbar-nav navbar-right">
             <% if user_signed_in? %>
-              <li><%= link_to "Create School", new_school_path, :class => 'nav-link'  %></li>
-              <li><%= link_to "Create Club", new_club_path(0), :class => 'nav-link'  %></li>
+              <li><%= link_to "Create Club", new_club_path(), :class => 'nav-link'  %></li>
               <li><%= link_to "Edit User", edit_user_registration_path, :class => 'nav-link'  %></li>
               <li><%= link_to "Log Out", destroy_user_session_path, :class => 'nav-link'  %></li>
             <% else %>

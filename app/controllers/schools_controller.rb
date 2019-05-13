@@ -8,10 +8,12 @@ class SchoolsController < ApplicationController
     
     def show
         @school = School.includes(:clubs).find(params[:id])
+        @schools = School.order('name ASC')
     end
     
     def new 
         @school = current_user.schools.new
+        @schools = School.order('name ASC')
         #@club = Club.new
     end
     
