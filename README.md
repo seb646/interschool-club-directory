@@ -1,6 +1,6 @@
 <div align="center"><a href="http://www.interschool.org/"><img src="http://seb646.com/images/interschool-padding.png" alt="Icarus Labs" width="420px"/></a>
 
-[![Version](https://img.shields.io/badge/Version-v0.1.0-brightgreen.svg "Version")](#) [![Rails](https://img.shields.io/badge/Rails-v5.2.3-orange.svg "Rails Version")](https://weblog.rubyonrails.org/2019/3/28/Rails-5-2-3-has-been-released/) [![Ruby](https://img.shields.io/badge/Ruby-v2.4.0-red.svg "Ruby Version")](https://www.ruby-lang.org/en/news/2016/12/25/ruby-2-4-0-released/) [![MIT License](https://img.shields.io/badge/License-MIT-blue.svg "MIT License")](https://github.com/seb646/interschool-club-directory/blob/master/LICENSE)
+[![Version](https://img.shields.io/badge/Version-v0.1.0-brightgreen.svg "Version")](https://github.com/seb646/interschool-club-directory/releases/tag/v0.1.0) [![Rails](https://img.shields.io/badge/Rails-v5.2.3-orange.svg "Rails Version")](https://weblog.rubyonrails.org/2019/3/28/Rails-5-2-3-has-been-released/) [![Ruby](https://img.shields.io/badge/Ruby-v2.4.0-red.svg "Ruby Version")](https://www.ruby-lang.org/en/news/2016/12/25/ruby-2-4-0-released/) [![MIT License](https://img.shields.io/badge/License-MIT-blue.svg "MIT License")](https://github.com/seb646/interschool-club-directory/blob/master/LICENSE)
 
 The New York Interschool Club Directory is an open source project built to connect <br> students with clubs and events within the consortium.<br>
 
@@ -83,7 +83,7 @@ Learn more about [running a migration](https://guides.rubyonrails.org/getting_st
 <br>
 
 ## Versions
-__Current Version:__ Beta v0.1.0 <br>
+__Current Version:__ [Beta v0.1.0](https://github.com/seb646/interschool-club-directory/releases/tag/v0.1.0) <br>
 
 Planned Releases: 
 * [Beta v0.2.0](https://github.com/seb646/interschool-club-directory/projects/1) - Summer 2019
