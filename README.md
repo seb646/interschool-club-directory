@@ -1,8 +1,10 @@
 <div align="center"><div style="margin-bottom: 30px"><a href="http://www.interschool.org/"><img src="http://seb646.com/images/interschool-padding.png" alt="Icarus Labs" width="350"/></a></div>
 
-[![Version](https://img.shields.io/badge/Download-v0.1.0-brightgreen.svg "Version")](https://github.com/seb646/interschool-club-directory/releases/tag/v0.1.0) [![Ruby](https://img.shields.io/badge/Ruby-v2.4.0-red.svg "Ruby Version")](https://www.ruby-lang.org/en/news/2016/12/25/ruby-2-4-0-released/) [![MIT License](https://img.shields.io/badge/License-MIT-blue.svg "MIT License")](https://github.com/seb646/interschool-club-directory/blob/master/LICENSE) [![Support](https://img.shields.io/badge/Support-red.svg "Support")](#)
+[![Version](https://img.shields.io/badge/Download-v0.1.0-brightgreen.svg "Version")](https://github.com/seb646/interschool-club-directory/releases/tag/v0.1.0) [![Ruby](https://img.shields.io/badge/Ruby-v2.4.0-red.svg "Ruby Version")](https://www.ruby-lang.org/en/news/2016/12/25/ruby-2-4-0-released/) [![MIT License](https://img.shields.io/badge/License-MIT-blue.svg "MIT License")](https://github.com/seb646/interschool-club-directory/blob/master/LICENSE)
 
-The New York Interschool Club Directory is an open source project built to connect <br> students with clubs and events witin the cosortium.</div><br>
+The New York Interschool Club Directory is an open source project built to connect <br> students with clubs and events witin the cosortium.<br>
+
+[Report a Bug](https://github.com/seb646/interschool-club-directory/issues/new)</div><br>
 
 ## Getting Started
 We recommend testing and developing using [AWS Cloud9](https://aws.amazon.com/cloud9). The documentation below assumes you are working in that environment. 
