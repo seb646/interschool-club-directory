@@ -76,7 +76,7 @@ $ rails g migration add_user_id_to_comments user_id:reference
 <br>
 
 ## Credits
-Copyright (c) [New York Interschool](http://www.interschool.org/), 2019. Released under the [MIT license](https://github.com/icaruslabs/icarus-desktop/blob/master/LICENSE). Created by [Sebastian Rodriguez](https://seb646.com) using [Ruby on Rails](https://rubyonrails.org/), maintained by various student and faculty contributors.
+Copyright (c) [New York Interschool](http://www.interschool.org/), 2019. Released under the [MIT license](https://github.com/seb646/interschool-club-directory/blob/master/LICENSE). Created by [Sebastian Rodriguez](https://seb646.com) using [Ruby on Rails](https://rubyonrails.org/), maintained by various student and faculty contributors.
 
 ### Contributors
 * [Sebastian Rodriguez '19](https://github.com/seb646) – The Browning School
