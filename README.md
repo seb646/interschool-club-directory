@@ -97,4 +97,4 @@ Copyright (c) [New York Interschool](http://www.interschool.org/), 2019. Created
 * [Aaron Grill](https://github.com/aarongrill) – The Browning School 
 * [Melodie Ting](https://github.com/melodieting) – The Browning School 
 
-Have an idea for a new feature? Want to help maintain the software? Contact your school's Computer Science Department Chair or Dean of Students to learn how to contribute. We encourage and depend on student and faculty participation. You must be a member of the New York Interschool to contribute.
+Have an idea for a new feature? Want to help maintain the software? Contact your school's Computer Science Department Chair or Dean of Students to learn how to contribute. We encourage and depend on student and faculty participation. You must be affiliated the New York Interschool to contribute.
