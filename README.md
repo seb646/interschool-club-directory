@@ -2,7 +2,7 @@
 
 [![Version](https://img.shields.io/badge/Version-v0.1.0-brightgreen.svg "Version")](#) [![Ruby](https://img.shields.io/badge/Ruby-v2.4.0-red.svg "Ruby Version")](https://www.ruby-lang.org/en/news/2016/12/25/ruby-2-4-0-released/) [![MIT License](https://img.shields.io/badge/License-MIT-blue.svg "MIT License")](https://github.com/seb646/interschool-club-directory/blob/master/LICENSE)
 
-The New York Interschool Club Directory is an open source project built to connect <br> students with clubs and events witin the cosortium.<br>
+The New York Interschool Club Directory is an open source project built to connect <br> students with clubs and events within the cosortium.<br>
 
 [Report a Bug](https://github.com/seb646/interschool-club-directory/issues/new)</div><br>
 
