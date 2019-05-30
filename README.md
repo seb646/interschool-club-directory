@@ -54,10 +54,10 @@ _NOTE: Whenever you start the application, make sure your MySQL database is runn
 <br>
 
 ## Credits
-Copyright (c) [New York Interschool](http://www.interschool.org/), 2019. Released under the [MIT license](https://github.com/icaruslabs/icarus-desktop/blob/master/LICENSE). Originally created by [Sebastian Rodriguez](https://seb646.com) using [Ruby on Rails](https://rubyonrails.org/).
+Copyright (c) [New York Interschool](http://www.interschool.org/), 2019. Released under the [MIT license](https://github.com/icaruslabs/icarus-desktop/blob/master/LICENSE). Created by [Sebastian Rodriguez](https://seb646.com) using [Ruby on Rails](https://rubyonrails.org/), maintained by various student and faculty contributors.
 
 ### Contributors
-* [Sebastian Rodriguez](https://github.com/seb646) – The Browning School
+* [Sebastian Rodriguez '19](https://github.com/seb646) – The Browning School
 * [Aaron Grill](https://github.com/aarongrill) – The Browning School 
 
 Have an idea for a new feature? Found a bug in the software? Contact your school's Computer Science Department Chair or Dean of Students to learn how to contribute. 
