@@ -65,14 +65,19 @@ __Create a new Controller__:
 ```
 $ rails g controller User
 ```
+Learn more about [generating a controller](https://guides.rubyonrails.org/getting_started.html#generating-a-controller).<br>
+
 __Create a new Model__: 
 ```
 $ rails g model Post title:string body:text
 ```
+Learn more about [generating a model](https://guides.rubyonrails.org/getting_started.html#generating-a-model).<br>
+
 __Create a new migration__: 
 ```
 $ rails g migration add_user_id_to_comments user_id:reference
 ```
+Learn more about [running a migration](https://guides.rubyonrails.org/getting_started.html#running-a-migration).
 <br>
 
 ## Credits
