@@ -17,7 +17,7 @@ __Step 2:__ Start the MySQL server:
 ```
 $ sudo service mysql start
 ```
-__Step 3:__ Enter the MySQL terminal (after you setup your user in Step 4, we recommend using those credentials to access the MySQL terminal):
+__Step 3:__ Enter the MySQL CLI (after you setup your user in Step 4, we recommend using those credentials to access the CLI):
 ```
 $ mysql -u root -p
 ```
