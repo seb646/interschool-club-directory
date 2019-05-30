@@ -83,10 +83,10 @@ Learn more about [running a migration](https://guides.rubyonrails.org/getting_st
 <br>
 
 ## Versions
-__Current Version:__ [Beta v0.1.0](https://github.com/seb646/interschool-club-directory/releases/tag/v0.1.0) <br>
+__Current Version:__ [Beta v0.1.0](https://github.com/seb646/interschool-club-directory/releases/tag/v0.1.0) (pre-release)<br>
 
 Planned Releases: 
-* [Beta v0.2.0](https://github.com/seb646/interschool-club-directory/projects/1) - Summer 2019
+* [Beta v0.2.0](https://github.com/seb646/interschool-club-directory/projects/1) (pre-release) - Summer 2019
 * [Public v1.0.0](https://github.com/seb646/interschool-club-directory/projects/2) - Fall 2019
 
 ## Credits
