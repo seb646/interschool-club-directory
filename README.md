@@ -1,8 +1,8 @@
-<div align="center"><div style="margin-bottom: 30px"><a href="http://www.interschool.org/"><img src="http://seb646.com/images/interschool-padding.png" alt="Icarus Labs" width="350"/></a></div>
+<div align="center"><div style="margin-bottom: 30px"><a href="http://www.interschool.org/"><img src="http://seb646.com/images/interschool-padding.png" alt="Icarus Labs"/></a></div>
 
 [![Version](https://img.shields.io/badge/Version-v0.1.0-brightgreen.svg "Version")](#) [![Rails](https://img.shields.io/badge/Rails-v5.2.3-orange.svg "Rails Version")](https://weblog.rubyonrails.org/2019/3/28/Rails-5-2-3-has-been-released/) [![Ruby](https://img.shields.io/badge/Ruby-v2.4.0-red.svg "Ruby Version")](https://www.ruby-lang.org/en/news/2016/12/25/ruby-2-4-0-released/) [![MIT License](https://img.shields.io/badge/License-MIT-blue.svg "MIT License")](https://github.com/seb646/interschool-club-directory/blob/master/LICENSE)
 
-The New York Interschool Club Directory is an open source project built to connect <br> students with clubs and events within the cosortium.<br>
+The New York Interschool Club Directory is an open source project built to connect <br> students with clubs and events within the consortium.<br>
 
 [Report a Bug](https://github.com/seb646/interschool-club-directory/issues/new)</div><br>
 
@@ -27,13 +27,13 @@ mysql> CREATE USER 'username'@'localhost' IDENTIFIED BY 'password';
 ```
 __Step 5:__ Create a MySQL database:
 ```
-mysql> CREATE DATABASE databse_name;
+mysql> CREATE DATABASE database_name;
 ```
 __Step 6:__ Link your user to your MySQL database (don't forget to change `username` and `password` to match your configuration in Step 4):
 ```
 mysql> GRANT ALL PRIVILEGES ON *.* TO 'username'@'localhost' IDENTIFIED BY 'password';
 ```
-__Step 7:__ Refresh your MySQL privilages:
+__Step 7:__ Refresh your MySQL privileges:
 ```
 mysql> FLUSH PRIVILEGES;
 ```
@@ -61,7 +61,8 @@ __View Routes__:
 ```
 $ rake routes
 ```
-Learn more aboit [routes](https://guides.rubyonrails.org/v3.2/routing.html).
+Learn more about [routes](https://guides.rubyonrails.org/v3.2/routing.html).<br>
+
 __Create a new Controller__: 
 ```
 $ rails g controller User
@@ -82,11 +83,11 @@ Learn more about [running a migration](https://guides.rubyonrails.org/getting_st
 <br>
 
 ## Credits
-Copyright (c) [New York Interschool](http://www.interschool.org/), 2019. Released under the [MIT license](https://github.com/seb646/interschool-club-directory/blob/master/LICENSE). Created by [Sebastian Rodriguez](https://seb646.com) using [Ruby on Rails](https://rubyonrails.org/), maintained by various student and faculty contributors.
+Copyright (c) [New York Interschool](http://www.interschool.org/), 2019. Created by [Sebastian Rodriguez](https://seb646.com) using [Ruby on Rails](https://rubyonrails.org/), maintained by various contributors. Released under the [MIT license](https://github.com/seb646/interschool-club-directory/blob/master/LICENSE). 
 
 ### Contributors
 * [Sebastian Rodriguez '19](https://github.com/seb646) – The Browning School
 * [Aaron Grill](https://github.com/aarongrill) – The Browning School 
 * Melodie Ting – The Browning School 
 
-Have an idea for a new feature? Want to help maintain the software? Contact your school's Computer Science Department Chair or Dean of Students to learn how to contribute. We encourage and depend on student and faculty participation.
+Have an idea for a new feature? Want to help maintain the software? Contact your school's Computer Science Department Chair or Dean of Students to learn how to contribute. We encourage and depend on student and faculty participation. You must be a member of the New York Interschool to contribute.
