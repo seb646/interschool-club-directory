@@ -38,7 +38,7 @@ class ClubsController < ApplicationController
         @club = Club.find(params[:id])
         
         if(@club.update(club_params))
-            redirect_to @club
+            redirect_to edit_club_path
         else
             render 'edit'
         end

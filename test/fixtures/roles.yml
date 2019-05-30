@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: 
+  club: 
+  admin: false
+  faculty_advisor: false
+  student_leader: false
+  member: false
+
+two:
+  user: 
+  club: 
+  admin: false
+  faculty_advisor: false
+  student_leader: false
+  member: false

@@ -28,7 +28,7 @@
           <ul class="list-group list-group-flush">
             <% if @club.days.blank? %><% else %><li class="list-group-item"><b>Meeting Time:</b><br> <%= @club.days %> <%= @club.time %></li><% end %>
             <% if @club.location.blank? %><% else %><li class="list-group-item"><b>Meeting Location:</b><br> <%= @club.location %></li><% end %>
-            <% if @club.user.name == "Not Listed" %><% else %><li class="list-group-item"><b>Student Leader:</b><br> <a href="mailto:<%= @club.user.email %>"><%= @club.user.name %> <% @club.user.graduating %></a></li><% end %>
+            <% if @club.user.name == "Not Listed" %><% else %><li class="list-group-item"><b>Student Leader:</b><br> <a href="mailto:<%= @club.user.email %>"><%= @club.user.name %>  <% if @club.user.graduating.blank? %><% else %><%= "'" + @club.user.graduating.last(2) %><% end %></a</a></li><% end %>
             <% if @club.faculty.blank? %><% else %><li class="list-group-item"><b>Faculty Advisor:</b><br> <% if @club.faculty_email.blank? %><%= @club.faculty %><% else %><a href="mailto:<%= @club.faculty_email %>"><%= @club.faculty %></a><% end %></li><% end %>
             <li class="list-group-item"><b>School:</b><br> <a href="<%= school_path(@club.school_id) %>"><img src="<%= @club.school.logo %>" class="mb-2 mt-2" width="50px"/></a>&nbsp;&nbsp;<%= link_to @club.school.name, school_path(@club.school) %></li>
           </ul>

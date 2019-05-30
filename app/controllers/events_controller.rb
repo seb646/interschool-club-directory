@@ -33,7 +33,7 @@ class EventsController < ApplicationController
         @event = @club.events.find(params[:id])
         
         if(@club.events.update(event_params))
-            redirect_to @club
+            redirect_to @event
         else
             render 'edit'
         end

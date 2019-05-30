@@ -79,7 +79,7 @@
                 <tr style="font-size: 15px;">
                   <th scope="row"><%= link_to club.name, club_path(club) %></th>
                   <td><% if club.faculty.blank? %><% else %><% if club.faculty_email.blank? %><%= club.faculty %><% else %><a href="mailto:<%= club.faculty_email %>"><%= club.faculty %></a><% end %><% end %></td>
-                  <td><% if club.user.name == "Not Listed" %><% else %><a href="mailto:<%= club.user.email %>"><%= club.user.name %></a><% end %></td>
+                  <td><% if club.user.name == "Not Listed" %><% else %><a href="mailto:<%= club.user.email %>"><%= club.user.name %> <% if club.user.graduating.blank? %><% else %><%= "'" + club.user.graduating.last(2) %><% end %></a><% end %></td>
                   <td><%= club.location %></td>
                   <td><%= club.days %> <%= club.time.gsub(" - ", "-") %></td>
                   <td><%= link_to "Edit", edit_club_path(club), :class => 'btn btn-secondary btn-sm btn-block' %> <%= link_to "Delete", club_path(club), method: :delete, data: {confirm: "Are you sure you want to delete this event?"}, :class => 'btn btn-sm btn-block btn-danger' %></td>

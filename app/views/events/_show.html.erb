@@ -18,7 +18,7 @@
                 <% @club.events.each do |event| %>
                 <tr style="font-size: 14px;">
                   <th scope="row"><%= link_to event.name, club_event_path(@club, event) %></th>
-                  <td><%= event.description %></td>
+                  <td><%= event.description.truncate(90, separator: ' ') %></td>
                   <td><%= event.date_and_time %></td>
                   <td><%= event.location %></td>
                   <td><% if event.rsvp.blank? %><% else %><a href="<%= event.rsvp %>">Link</a><% end %></td>

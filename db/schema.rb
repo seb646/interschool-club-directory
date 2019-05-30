@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_13_053817) do
+ActiveRecord::Schema.define(version: 2019_05_21_133641) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "name"
@@ -54,6 +54,19 @@ ActiveRecord::Schema.define(version: 2019_05_13_053817) do
     t.index ["user_id"], name: "index_events_on_user_id"
   end
 
+  create_table "roles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "club_id"
+    t.boolean "admin"
+    t.boolean "faculty_advisor"
+    t.boolean "student_leader"
+    t.boolean "member"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["club_id"], name: "index_roles_on_club_id"
+    t.index ["user_id"], name: "index_roles_on_user_id"
+  end
+
   create_table "schools", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "name"
     t.bigint "user_id"
@@ -82,7 +95,7 @@ ActiveRecord::Schema.define(version: 2019_05_13_053817) do
     t.datetime "updated_at", null: false
     t.text "first_name"
     t.text "last_name"
-    t.integer "graduating"
+    t.text "graduating"
     t.text "bio"
     t.boolean "admin", default: false
     t.index ["email"], name: "index_users_on_email", unique: true

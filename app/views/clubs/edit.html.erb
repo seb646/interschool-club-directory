@@ -89,7 +89,7 @@
 <hr class="mt-4 mb-4">
 <div class="card" id="events">
     <div class="card-header" style="padding:.75rem 1.25rem !important">
-        <h5 class="mt-2 font-weight-bold">Event List</h5>
+        <h5 class="mt-2 font-weight-bold">Event Management</h5>
     </div>
     <div class="card-body">
         <table class="table">
@@ -111,7 +111,7 @@
                 <% @club.events.each do |event| %>
                 <tr style="font-size: 15px;">
                   <th scope="row"><%= link_to event.name, club_event_path(event) %></th>
-                  <td><%= event.description %></td>
+                  <td><%= event.description.truncate(130, separator: ' ') %></td>
                   <td><%= event.date_and_time %></td>
                   <td><%= event.location %></td>
                   <td><%= link_to "Edit", edit_club_event_path(@club, event), :class => 'btn btn-secondary btn-sm btn-block' %> <%= link_to "Delete", club_event_path(@club, event), method: :delete, data: {confirm: "Are you sure you want to delete this event?"}, :class => 'btn btn-sm btn-block btn-danger' %></td>
