@@ -5,8 +5,6 @@
 The New York Interschool Club Directory is an open source project built to connect <br> students with clubs and events witin the cosortium.</div><br>
 
 ## Getting Started
-
-### For Developers: 
 We recommend testing and developing using [AWS Cloud9](https://aws.amazon.com/cloud9). The documentation below assumes you are working in that environment. 
 
 __Step 1:__ Install the dependencies located in the project's [Gemfile](https://github.com/seb646/interschool-club-directory/blob/master/Gemfile):
@@ -46,11 +44,33 @@ __Step 7:__ Configure the application for your MySQL database. Edit the [databas
 24     username: MYSQL_USERNAME
 25     password: MYSQL_PASSWORD
 ```
-__Step 8:__ Start the Rails application:
+__Step 8:__ Migrate the database:
+```
+$ rake db:migrate
+```
+__Step 9:__ Start the Rails application:
 ```
 $ rails s -b $IP -p $PORT
 ```
 _NOTE: Whenever you start the application, make sure your MySQL database is running._
+
+### Helpful Commands:
+__View Routes__:
+```
+$ rake routes
+```
+__Create a new Controller__: 
+```
+$ rails g controller User
+```
+__Create a new Model__: 
+```
+$ rails g model Post title:string body:text
+```
+__Create a new migration__: 
+```
+$ rails g migration add_user_id_to_comments user_id:reference
+```
 <br>
 
 ## Credits
@@ -59,5 +79,6 @@ Copyright (c) [New York Interschool](http://www.interschool.org/), 2019. Release
 ### Contributors
 * [Sebastian Rodriguez '19](https://github.com/seb646) – The Browning School
 * [Aaron Grill](https://github.com/aarongrill) – The Browning School 
+* Melodie Ting – The Browning School 
 
 Have an idea for a new feature? Found a bug in the software? Contact your school's Computer Science Department Chair or Dean of Students to learn how to contribute. 
