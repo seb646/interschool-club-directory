@@ -1,4 +1,4 @@
-<div align="center"><a href="http://www.interschool.org/"><img src="http://seb646.com/images/interschool.png" alt="Icarus Labs" width="350" style="margin-bottom:20px"/></a><br>
+<div align="center"><a href="http://www.interschool.org/"><img src="http://seb646.com/images/interschool.png" alt="Icarus Labs" width="350" style="padding-bottom:20px"/></a><br>
 
 [![Version](https://img.shields.io/badge/Download-v0.1.0-brightgreen.svg "Version")](https://github.com/seb646/interschool-club-directory/releases/tag/v0.1.0) [![MIT License](https://img.shields.io/badge/License-MIT-blue.svg "MIT License")](https://github.com/seb646/interschool-club-directory/blob/master/LICENSE) [![Support](https://img.shields.io/badge/Support-red.svg "Support")](#)
 
