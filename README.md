@@ -87,7 +87,7 @@ __Current Version:__ [Beta v0.1.0](https://github.com/seb646/interschool-club-di
 
 Planned Releases: 
 * [Beta v0.2.0](https://github.com/seb646/interschool-club-directory/projects/1) - Summer 2019
-* [Public Release v1.0.0](https://github.com/seb646/interschool-club-directory/projects/2) - Fall 2019
+* [Public v1.0.0](https://github.com/seb646/interschool-club-directory/projects/2) - Fall 2019
 
 ## Credits
 Copyright (c) [New York Interschool](http://www.interschool.org/), 2019. Created by [Sebastian Rodriguez](https://seb646.com) using [Ruby on Rails](https://rubyonrails.org/), maintained by various contributors. Released under the [MIT license](https://github.com/seb646/interschool-club-directory/blob/master/LICENSE). 
